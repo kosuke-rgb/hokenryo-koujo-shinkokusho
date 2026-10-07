@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>保険料控除申告書の書き方・計算ツール【令和8年分】書く金額が欄ごとに分かる</title>
+<meta name="description" content="控除証明書の金額を入れるだけで、令和8年分の保険料控除申告書のA〜E・①〜⑧・㋑㋺㋩、地震保険料控除の各欄に書く金額を自動計算。23歳未満の扶養親族がいる場合の新しい欄にも対応した無料ツール。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://webtools-labs.com/hokenryo-koujo-shinkokusho/">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2370765779014113" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NKK5TXCQEK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NKK5TXCQEK');
+</script>
+<script>
+(function () {
+  var fired = false;
+  function fireOnce() {
+    if (fired) return;
+    fired = true;
+    if (typeof gtag === 'function') gtag('event', 'tool_used', { tool_name: document.title });
+  }
+  document.addEventListener('input', fireOnce, true);
+  document.addEventListener('change', fireOnce, true);
+})();
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f766e'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='sans-serif'%3E%EF%BF%A5%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="webtools-labs">
+<meta property="og:title" content="保険料控除申告書の書き方・計算ツール【令和8年分】">
+<meta property="og:description" content="控除証明書の金額を入れるだけで、保険料控除申告書の各欄に書く金額が分かります。">
+<meta property="og:url" content="https://webtools-labs.com/hokenryo-koujo-shinkokusho/">
+<meta property="og:image" content="https://webtools-labs.com/hokenryo-koujo-shinkokusho/og-image.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="保険料控除申告書の書き方・計算ツール【令和8年分】">
+<meta name="twitter:description" content="年末調整の保険料控除申告書に書く金額を、欄ごとに自動計算できる無料ツール。">
+<meta name="twitter:image" content="https://webtools-labs.com/hokenryo-koujo-shinkokusho/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "保険料控除申告書 計算ツール",
+  "url": "https://webtools-labs.com/hokenryo-koujo-shinkokusho/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "控除証明書の金額から、令和8年分の給与所得者の保険料控除申告書の各欄（生命保険料控除・地震保険料控除など）に書く金額を計算する無料ツール。",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+  "inLanguage": "ja"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "保険料控除申告書には何を書けばいいですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "10〜11月ごろに保険会社から届く「控除証明書」に書かれた、その年に支払う保険料（証明額）を、保険の種類ごとに書きます。生命保険料控除は一般・介護医療・個人年金の3つに分け、それぞれ新契約（平成24年以後の契約）と旧契約で欄が分かれています。地震保険料控除・社会保険料控除・小規模企業共済等掛金控除は、該当するものがある場合だけ書きます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "令和8年分の申告書は何が変わりましたか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "一般の生命保険料の欄に「年齢23歳未満の扶養親族の有無」と☆欄が加わりました。23歳未満の扶養親族（子どもなど）がいる人は、新契約の一般の生命保険料を「計算式Ⅱ」で計算し、控除額の上限が4万円から6万円に上がります。この場合は①・④ではなく②・⑤の欄を使います。生命保険料控除の合計の上限12万円は変わりません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "A・B・C・D・Eの欄には何を書きますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "Aは一般の生命保険料のうち新契約の合計、Bは旧契約の合計、Cは介護医療保険料の合計、Dは個人年金保険料のうち新契約の合計、Eは旧契約の合計です。それぞれ、控除証明書の「証明額」（その年の12月までに払う見込みの額）を足して書きます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "給与から引かれている社会保険料も書く必要がありますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "書きません。給与から天引きされている健康保険・厚生年金・雇用保険の保険料は、会社が自動で控除します。社会保険料控除の欄に書くのは、自分で直接払った国民年金保険料や国民健康保険料（家族の分を払った場合を含む）などです。国民年金保険料を書く場合は、控除証明書の添付が必要です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "iDeCoの掛金はどこに書きますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "口座振替などで自分で直接払っているiDeCoの掛金は「小規模企業共済等掛金控除」の欄に書き、国民年金基金連合会から届く証明書を添付します。会社の給与から天引きされている場合（企業型DCのマッチング拠出なども含む）は、会社が自動で控除するため書きません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "書き間違えた・出し忘れた場合はどうなりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "年末調整の前なら、勤務先に申し出て書き直せます。年末調整が終わった後に気づいた場合でも、勤務先によっては再計算してもらえます。間に合わなかった場合は、翌年に確定申告をすれば控除を受けられます。" }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://webtools-labs.com/" },
+    { "@type": "ListItem", "position": 2, "name": "保険料控除申告書 計算ツール" }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #ffffff;
+  --surface-2: #f7f7f7;
+  --ink: #1a1a1a;
+  --muted: #767676;
+  --line: #e3e3e3;
+  --accent: #0f766e;
+  --best-bg: #f0f8f6;
+  --warn-bg: #fff7ed;
+  --warn-ink: #9a5b00;
+  --bad-bg: #fef2f2;
+  --bad-ink: #b91c1c;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+.page { max-width: 720px; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+header.masthead { margin-bottom: 1.5rem; }
+h1 {
+  font-weight: 700;
+  font-size: clamp(1.4rem, 4.5vw, 1.7rem);
+  margin: 0 0 0.7rem;
+  letter-spacing: 0.01em;
+}
+p.lede { color: var(--muted); margin: 0; max-width: 60ch; font-size: 0.95rem; }
+.updated-note { display: block; margin-top: 0.9rem; font-size: 0.78rem; color: var(--muted); }
+
+.notice-box {
+  background: var(--warn-bg); color: var(--warn-ink); border-radius: 8px;
+  padding: 0.9rem 1.1rem; font-size: 0.85rem; margin-bottom: 2rem;
+}
+
+section { margin-bottom: 2.5rem; }
+h2 { font-size: 1.05rem; font-weight: 700; margin: 0 0 1rem; }
+
+.field-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem; }
+.field { flex: 1; min-width: 160px; }
+.field label { display: block; font-size: 0.83rem; color: var(--muted); margin-bottom: 0.35rem; }
+.check-row { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9rem; margin: 0 0 1.25rem; }
+.check-row input { width: 1.1rem; height: 1.1rem; margin-top: 0.25rem; accent-color: var(--accent); }
+.field-group { font-size: 0.85rem; font-weight: 700; margin: 0.4rem 0 0.5rem; }
+.sym { display: inline-block; min-width: 1.6rem; font-weight: 700; color: var(--accent); }
+.form-section { font-weight: 700; background: var(--bg-soft, rgba(15,118,110,0.06)); }
+table.compare.form-table th:nth-child(2), table.compare.form-table td:nth-child(2) { text-align: left; }
+table.compare.form-table td.num { white-space: nowrap; }
+.field input[type="number"], .field select {
+  width: 100%; font-variant-numeric: tabular-nums; font-size: 1.05rem; font-family: inherit;
+  padding: 0.55rem 0.7rem; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--bg); color: var(--ink);
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+
+.status-box { border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1.25rem; font-size: 0.92rem; }
+.status-box.ok { background: var(--best-bg); color: var(--ink); }
+.status-box.bad { background: var(--bad-bg); color: var(--bad-ink); }
+.status-box strong { font-size: 1.1rem; }
+
+.summary-cards { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+.summary-card {
+  flex: 1; min-width: 180px; background: var(--surface-2); border-radius: 10px;
+  padding: 1rem 1.2rem;
+}
+.summary-card .label { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.3rem; }
+.summary-card .value { font-size: 1.4rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.summary-card .sub { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; }
+
+table.compare { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+table.compare th, table.compare td {
+  padding: 0.55rem 0.5rem; text-align: right; border-bottom: 1px solid var(--line); vertical-align: top;
+}
+table.compare th:first-child, table.compare td:first-child { text-align: left; }
+table.compare thead th { color: var(--muted); font-weight: 500; font-size: 0.78rem; }
+table.compare td.num { font-variant-numeric: tabular-nums; }
+tr.total td { font-weight: 700; }
+tr.total { background: var(--best-bg); }
+
+.ref-table { overflow-x: auto; }
+.ref-table table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 460px; }
+.ref-table th, .ref-table td { padding: 0.5rem 0.5rem; border-bottom: 1px solid var(--line); text-align: left; }
+.ref-table td.num { font-variant-numeric: tabular-nums; text-align: right; }
+.ref-table tr.highlight td { background: var(--best-bg); font-weight: 700; }
+.ref-table-scroll { max-height: 420px; overflow-y: auto; }
+
+.disclaimer { font-size: 0.78rem; color: var(--muted); margin-top: 1rem; }
+
+.share-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.1rem; }
+.share-btn {
+  display: inline-flex; align-items: center; padding: 0.5rem 1rem; border-radius: 999px;
+  color: #fff; text-decoration: none; font-size: 0.82rem; font-weight: 700;
+}
+.share-btn:hover { opacity: 0.85; }
+.share-x { background: #000; }
+.share-line { background: #06c755; }
+.share-fb { background: #1877f2; }
+.share-hatena { background: #00a4de; }
+
+.ad-slot { margin: 2.5rem 0; text-align: center; min-height: 100px; }
+
+.pr-box {
+  border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 10px;
+  padding: 1.2rem 1.3rem; margin: 2.5rem 0; background: var(--best-bg);
+}
+.pr-box .pr-label {
+  display: inline-flex; align-items: center; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em;
+  color: #fff; background: var(--accent); border-radius: 999px;
+  padding: 0.2rem 0.7rem; margin-bottom: 0.8rem;
+}
+.pr-box p.pr-lede { color: var(--ink); font-size: 0.92rem; margin: 0 0 1rem; max-width: none; line-height: 1.7; }
+.pr-box .pr-banner { text-align: center; }
+.pr-box .pr-banner img { max-width: 100%; height: auto; }  /* 広告バナー（幅320px）がスマホで画面からはみ出さないように */
+.pr-box .pr-cta {
+  display: inline-block; background: var(--accent); color: #fff; font-weight: 700;
+  font-size: 0.85rem; padding: 0.6rem 1.3rem; border-radius: 999px; text-decoration: none;
+}
+.pr-box .pr-cta:hover { opacity: 0.85; }
+
+.contact-box textarea {
+  width: 100%; min-height: 6rem; font-family: inherit; font-size: 0.92rem;
+  padding: 0.7rem; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink);
+  resize: vertical; margin-bottom: 0.6rem;
+}
+.contact-box input[type="email"] {
+  width: 100%; font-family: inherit; font-size: 0.92rem;
+  padding: 0.6rem 0.7rem; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+.contact-box textarea:focus, .contact-box input:focus { outline: none; border-color: var(--accent); }
+.contact-box button {
+  font-family: inherit; font-weight: 700; font-size: 0.9rem; padding: 0.6rem 1.4rem;
+  border: none; border-radius: 6px; background: var(--accent); color: #fff; cursor: pointer;
+}
+.contact-box button:disabled { opacity: 0.5; cursor: not-allowed; }
+.contact-status { font-size: 0.85rem; margin-top: 0.6rem; }
+.contact-status.ok { color: var(--accent); }
+.contact-status.err { color: #b91c1c; }
+
+footer.site-footer {
+  margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line);
+  font-size: 0.78rem; color: var(--muted);
+}
+footer.site-footer p { margin: 0 0 0.5rem; }
+footer.site-footer a { color: var(--accent); }
+
+.faq-item { border-bottom: 1px solid var(--line); padding: 0.9rem 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-item summary {
+  cursor: pointer; font-weight: 700; font-size: 0.92rem; list-style: none;
+  position: relative; padding-right: 1.6rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; position: absolute; right: 0; top: 0; color: var(--accent); font-weight: 700; font-size: 1.1rem;
+}
+.faq-item[open] summary::after { content: '−'; }
+.faq-item p { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.88rem; }
+.breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.1rem; }
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="breadcrumb" aria-label="パンくずリスト"><a href="https://webtools-labs.com/">ホーム</a> / 保険料控除申告書 計算ツール</nav>
+  <header class="masthead">
+    <h1>保険料控除申告書の書き方・計算ツール【令和8年分】</h1>
+    <p class="lede">保険会社から届いた控除証明書の金額を入れるだけで、年末調整で出す「給与所得者の保険料控除申告書」の各欄（A〜E、①〜⑧、㋑㋺㋩、地震保険料控除）に書く金額が分かります。</p>
+    <span class="updated-note">制度 最終確認日: 2026年10月7日（国税庁「令和8年分 給与所得者の保険料控除申告書」の様式・記載例にもとづく）</span>
+    <p class="ad-disclosure" style="font-size:0.75rem;opacity:0.7;margin:0.5rem 0 0;">※当サイトはアフィリエイト広告（PR）を利用しています。</p>
+  </header>
+
+  <div class="notice-box">
+    ⚠️ 令和8年分の申告書では、一般の生命保険料の欄に<strong>「年齢23歳未満の扶養親族の有無」と☆欄</strong>が加わりました。23歳未満の扶養親族がいる人は、新契約の一般の生命保険料の控除額の上限が<strong>4万円→6万円</strong>になり、①・④ではなく<strong>②・⑤</strong>の欄を使います。様式は<a href="https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/gensen/annai/1648_05.htm" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">国税庁「給与所得者の保険料控除の申告」</a>で確認できます。
+  </div>
+
+  <section>
+    <h2>控除証明書の金額を入力</h2>
+    <p class="field-group">一般の生命保険料（死亡保険・終身保険・学資保険など）</p>
+    <div class="field-row">
+      <div class="field">
+        <label for="generalNew">新契約の合計（A）</label>
+        <input type="number" id="generalNew" min="0" step="1000" value="80000">
+      </div>
+      <div class="field">
+        <label for="generalOld">旧契約の合計（B）</label>
+        <input type="number" id="generalOld" min="0" step="1000" value="0">
+      </div>
+    </div>
+    <label class="check-row"><input type="checkbox" id="kids"><span>年齢23歳未満の扶養親族（子どもなど）がいる（☆欄を書き、計算式Ⅱを使う）</span></label>
+    <p class="field-group">介護医療保険料（医療保険・がん保険など）</p>
+    <div class="field-row">
+      <div class="field">
+        <label for="medical">合計（C）</label>
+        <input type="number" id="medical" min="0" step="1000" value="50000">
+      </div>
+    </div>
+    <p class="field-group">個人年金保険料（税制適格特約付きの個人年金保険）</p>
+    <div class="field-row">
+      <div class="field">
+        <label for="pensionNew">新契約の合計（D）</label>
+        <input type="number" id="pensionNew" min="0" step="1000" value="0">
+      </div>
+      <div class="field">
+        <label for="pensionOld">旧契約の合計（E）</label>
+        <input type="number" id="pensionOld" min="0" step="1000" value="0">
+      </div>
+    </div>
+    <p class="field-group">地震保険料控除</p>
+    <div class="field-row">
+      <div class="field">
+        <label for="earthquake">地震保険料の合計（Ⓑ）</label>
+        <input type="number" id="earthquake" min="0" step="1000" value="0">
+      </div>
+      <div class="field">
+        <label for="oldLongTerm">旧長期損害保険料の合計（Ⓒ）</label>
+        <input type="number" id="oldLongTerm" min="0" step="1000" value="0">
+      </div>
+    </div>
+    <p class="field-group">自分で直接払ったもの（給与から天引きされている分は入れない）</p>
+    <div class="field-row">
+      <div class="field">
+        <label for="social">社会保険料（国民年金・国民健康保険など）</label>
+        <input type="number" id="social" min="0" step="1000" value="0">
+      </div>
+      <div class="field">
+        <label for="smallBiz">小規模企業共済等掛金（iDeCoなど）</label>
+        <input type="number" id="smallBiz" min="0" step="1000" value="0">
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="taxRate">あなたの所得税率（節税額の目安に使います。分からなければ10%）</label>
+        <select id="taxRate">
+          <option value="0.05">5%（課税所得195万円以下）</option>
+          <option value="0.10" selected>10%（195万円超330万円以下）</option>
+          <option value="0.20">20%（330万円超695万円以下）</option>
+          <option value="0.23">23%（695万円超900万円以下）</option>
+          <option value="0.33">33%（900万円超1,800万円以下）</option>
+          <option value="0.40">40%（1,800万円超4,000万円以下）</option>
+          <option value="0.45">45%（4,000万円超）</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="summary-cards" id="summaryCards"></div>
+    <h3 style="font-size:1rem;margin:1.2rem 0 0.4rem;">申告書に書く金額</h3>
+    <div style="overflow-x:auto">
+      <table class="compare form-table">
+        <thead><tr><th>欄</th><th>書く内容</th><th class="num">金額</th></tr></thead>
+        <tbody id="resultBody"></tbody>
+      </table>
+    </div>
+    <p class="disclaimer">計算は国税庁の様式どおり（1円未満の端数は切り上げ）。金額が0円の欄は書かなくてかまいません。節税額は「所得税の控除額×所得税率×1.021（復興特別所得税）＋住民税の控除額×10%」で計算した目安で、住民税は翌年度（令和9年度）の税額に反映されます。</p>
+    <div class="share-row" id="shareRow">
+      <a class="share-btn share-x" id="shareX" href="#" target="_blank" rel="noopener">𝕏でシェア</a>
+      <a class="share-btn share-line" id="shareLine" href="#" target="_blank" rel="noopener">LINEで送る</a>
+      <a class="share-btn share-fb" id="shareFb" href="#" target="_blank" rel="noopener">Facebookでシェア</a>
+      <a class="share-btn share-hatena" id="shareHatena" href="#" target="_blank" rel="noopener">はてブする</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>保険料控除申告書の書き方（4ステップ）</h2>
+    <p><strong>1. 控除証明書を種類ごとに分ける。</strong>生命保険の控除証明書には「一般」「介護医療」「個人年金」の区分と「新・旧」の別が書かれています。地震保険の証明書は「地震保険料」か「旧長期損害保険料」かを確認します。</p>
+    <p><strong>2. 1枚ずつ明細を書く。</strong>保険会社名・保険の種類・保険期間・契約者と受取人の氏名・新旧の区分・「本年中に支払った保険料等の金額」（証明額）を書きます。</p>
+    <p><strong>3. 区分ごとに合計してA〜E、Ⓑ・Ⓒに書く。</strong>このツールの入力欄と同じ区分です。23歳未満の扶養親族がいる人は、☆欄にその人の氏名・生年月日などを書きます。</p>
+    <p><strong>4. 計算式に当てはめて①〜⑧、㋑㋺㋩、控除額を書く。</strong>このツールの「申告書に書く金額」の表をそのまま写せます。最後に控除証明書を添付して勤務先に提出します。</p>
+  </section>
+
+  <section>
+    <h2>生命保険料控除の計算式（申告書の裏面と同じ）</h2>
+    <div class="ref-table">
+      <table>
+        <thead><tr><th>年間の保険料</th><th>計算式Ⅰ（新・A/C/D）</th><th>計算式Ⅱ（新・23歳未満の扶養親族あり・A）</th><th>計算式Ⅲ（旧・B/E）</th></tr></thead>
+        <tbody>
+          <tr><td>〜2万円</td><td>全額</td><td>全額（3万円まで）</td><td>全額（2.5万円まで）</td></tr>
+          <tr><td>〜4万円</td><td>×1/2＋1万円</td><td>3万円超6万円以下: ×1/2＋1.5万円</td><td>2.5万円超5万円以下: ×1/2＋1.25万円</td></tr>
+          <tr><td>〜8万円</td><td>×1/4＋2万円</td><td>6万円超12万円以下: ×1/4＋3万円</td><td>5万円超10万円以下: ×1/4＋2.5万円</td></tr>
+          <tr><td>それ以上</td><td>一律4万円</td><td>12万円超: 一律6万円</td><td>10万円超: 一律5万円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="disclaimer">新旧両方がある区分は、「旧だけで計算した額」と「新旧の合計（上限4万円、23歳未満の扶養親族がいる一般は6万円）」の大きいほうが控除額になります（㋑・㋩欄）。生命保険料控除の合計は最高12万円です。地震保険料控除は地震保険料が全額（最高5万円）、旧長期損害保険料は1万円を超えると×1/2＋5,000円（最高1.5万円）で、合計最高5万円です。</p>
+  </section>
+
+  <section>
+    <h2>計算例: 国税庁の記載例と同じ条件</h2>
+    <p>23歳未満の扶養親族がいて、一般の生命保険料が新8万円・旧3.5万円、介護医療保険料8万円、個人年金保険料が新3万円・旧9万円、地震保険料4.2万円・旧長期損害保険料1.48万円の場合です。</p>
+    <div class="ref-table">
+      <table>
+        <tbody>
+          <tr><td>②（Aを計算式Ⅱ）</td><td class="num">50,000円</td></tr>
+          <tr><td>③（Bを計算式Ⅲ）</td><td class="num">30,000円</td></tr>
+          <tr><td>⑤（②＋③、最高6万円）</td><td class="num">60,000円</td></tr>
+          <tr><td>㋑ 一般の生命保険料の控除額</td><td class="num">60,000円</td></tr>
+          <tr><td>㋺ 介護医療保険料の控除額</td><td class="num">40,000円</td></tr>
+          <tr><td>㋩ 個人年金保険料の控除額（⑦と⑧の大きいほう）</td><td class="num">47,500円</td></tr>
+          <tr class="total"><td>生命保険料控除額（147,500円→最高12万円）</td><td class="num">120,000円</td></tr>
+          <tr class="total"><td>地震保険料控除額（54,400円→最高5万円）</td><td class="num">50,000円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="disclaimer">国税庁の記載例（令和8年分）の計算結果と同じになることを確認しています。上の入力欄に同じ金額を入れると、各欄の金額を確認できます。</p>
+  </section>
+
+  <div class="pr-box">
+    <span class="pr-label">次のステップ</span>
+    <p class="pr-lede">申告書が書けたら、年末調整で実際にいくら戻ってくるかを確認しておきましょう。年末までに寄附すれば、ふるさと納税も来年の住民税が安くなります。</p>
+    <div class="pr-banner">
+      <a href="https://webtools-labs.com/nencho-kanpu-keisan/" class="pr-cta">年末調整 還付金シミュレーター</a>
+      <a href="https://webtools-labs.com/furusato-nozei-keisan/" class="pr-cta" style="margin-left:0.6rem;">ふるさと納税 上限額シミュレーター</a>
+      <a href="https://webtools-labs.com/tokutei-shinzoku-keisan/" class="pr-cta" style="margin-left:0.6rem;">特定親族特別控除 計算ツール</a>
+    </div>
+  </div>
+
+  <div class="ad-slot">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2370765779014113"
+      data-ad-slot="3021985784"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <section>
+    <h2>よくある質問</h2>
+    <details class="faq-item">
+      <summary>保険料控除申告書には何を書けばいいですか？</summary>
+      <p>10〜11月ごろに保険会社から届く「控除証明書」に書かれた、その年に支払う保険料（証明額）を、保険の種類ごとに書きます。生命保険料控除は一般・介護医療・個人年金の3つに分け、それぞれ新契約（平成24年以後の契約）と旧契約で欄が分かれています。地震保険料控除・社会保険料控除・小規模企業共済等掛金控除は、該当するものがある場合だけ書きます。</p>
+    </details>
+    <details class="faq-item">
+      <summary>令和8年分の申告書は何が変わりましたか？</summary>
+      <p>一般の生命保険料の欄に「年齢23歳未満の扶養親族の有無」と☆欄が加わりました。23歳未満の扶養親族（子どもなど）がいる人は、新契約の一般の生命保険料を「計算式Ⅱ」で計算し、控除額の上限が4万円から6万円に上がります。この場合は①・④ではなく②・⑤の欄を使います。生命保険料控除の合計の上限12万円は変わりません。</p>
+    </details>
+    <details class="faq-item">
+      <summary>A・B・C・D・Eの欄には何を書きますか？</summary>
+      <p>Aは一般の生命保険料のうち新契約の合計、Bは旧契約の合計、Cは介護医療保険料の合計、Dは個人年金保険料のうち新契約の合計、Eは旧契約の合計です。それぞれ、控除証明書の「証明額」（その年の12月までに払う見込みの額）を足して書きます。</p>
+    </details>
+    <details class="faq-item">
+      <summary>給与から引かれている社会保険料も書く必要がありますか？</summary>
+      <p>書きません。給与から天引きされている健康保険・厚生年金・雇用保険の保険料は、会社が自動で控除します。社会保険料控除の欄に書くのは、自分で直接払った国民年金保険料や国民健康保険料（家族の分を払った場合を含む）などです。国民年金保険料を書く場合は、控除証明書の添付が必要です。</p>
+    </details>
+    <details class="faq-item">
+      <summary>iDeCoの掛金はどこに書きますか？</summary>
+      <p>口座振替などで自分で直接払っているiDeCoの掛金は「小規模企業共済等掛金控除」の欄に書き、国民年金基金連合会から届く証明書を添付します。会社の給与から天引きされている場合（企業型DCのマッチング拠出なども含む）は、会社が自動で控除するため書きません。</p>
+    </details>
+    <details class="faq-item">
+      <summary>書き間違えた・出し忘れた場合はどうなりますか？</summary>
+      <p>年末調整の前なら、勤務先に申し出て書き直せます。年末調整が終わった後に気づいた場合でも、勤務先によっては再計算してもらえます。間に合わなかった場合は、翌年に確定申告をすれば控除を受けられます。</p>
+    </details>
+  </section>
+
+  <section class="contact-box">
+    <h2>ご意見・追加してほしい機能</h2>
+    <p class="lede" style="margin-bottom:0.9rem;">気づいたことや、あったら便利な機能があれば教えてください。</p>
+    <form id="contactForm">
+      <input type="email" id="contactEmail" placeholder="返信が必要な場合はメールアドレス（任意）">
+      <textarea id="contactMessage" placeholder="ご意見・ご要望をどうぞ" required></textarea>
+      <button type="submit" id="contactSubmit">送信する</button>
+      <p class="contact-status" id="contactStatus"></p>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <p>本ツールは令和8年分（2026年）の給与所得者の保険料控除申告書の記入を助けるための目安です。実際の記入は、国税庁の様式・記載例と勤務先の案内に従ってください。控除証明書の添付が必要なもの（生命保険料・地震保険料・国民年金保険料・小規模企業共済等掛金など）は、必ず添付してください。</p>
+    <p>あわせて使える：
+      <a href="https://webtools-labs.com/frima-tesuryo-hikaku/">フリマ手数料計算・比較ツール</a> ／
+      <a href="https://webtools-labs.com/frima-hasso-hikaku/">フリマ配送方法・送料比較ツール</a> ／
+      <a href="https://webtools-labs.com/frima-tedori-simulator/">フリマ手取りシミュレーター</a> ／
+      <a href="https://webtools-labs.com/yukyu-hiyou-keisan/">有給休暇 付与日数計算ツール</a> ／
+      <a href="https://webtools-labs.com/revolving-risoku-keisan/">リボ払い・分割払い 実質利息計算ツール</a> ／
+      <a href="https://webtools-labs.com/taishoku-yukyu-keisan/">退職時の有給消化シミュレーター</a> ／
+      <a href="https://webtools-labs.com/fuyou-no-kabe-keisan/">扶養の壁チェッカー</a> ／
+      <a href="https://webtools-labs.com/tedori-keisan/">手取り計算ツール</a> ／
+      <a href="https://webtools-labs.com/taishokukin-zei-keisan/">退職金の税金計算ツール</a> ／
+      <a href="https://webtools-labs.com/taishokugo-hoken-hikaku-keisan/">退職後の健康保険 比較シミュレーター</a> ／
+      <a href="https://webtools-labs.com/sankyu-ikuji-teate-keisan/">産休・育休手当金シミュレーター</a> ／
+      <a href="https://webtools-labs.com/zangyodai-keisan/">残業代計算ツール</a> ／
+      <a href="https://webtools-labs.com/shitsugyo-hoken-keisan/">失業保険（基本手当）シミュレーター</a> ／
+      <a href="https://webtools-labs.com/jikyu-nenshu-keisan/">時給から年収・月収を計算</a> ／
+      <a href="https://webtools-labs.com/yubin-kitte-keisan/">郵便物の切手代早見表</a> ／
+      <a href="https://webtools-labs.com/bonus-tedori-keisan/">賞与手取り計算ツール</a> ／
+      <a href="https://webtools-labs.com/shoubyou-teate-keisan/">傷病手当金計算ツール</a> ／
+      <a href="https://webtools-labs.com/juminzei-keisan/">住民税計算ツール</a> ／
+      <a href="https://webtools-labs.com/tsukin-teate-keisan/">通勤手当の非課税限度額計算ツール</a> ／
+      <a href="https://webtools-labs.com/tedori-gyakusan-keisan/">手取りから逆算する年収計算ツール</a> ／
+      <a href="https://webtools-labs.com/shakaihoken-uchiwake-keisan/">給与の社会保険料 内訳計算ツール</a> ／
+      <a href="https://webtools-labs.com/fukugyo-shinkoku-keisan/">副業の確定申告 要否チェッカー</a> ／
+      <a href="https://webtools-labs.com/nencho-kanpu-keisan/">年末調整 還付金シミュレーター</a> ／
+      <a href="https://webtools-labs.com/iryouhi-koujo-keisan/">医療費控除 計算ツール</a> ／
+      <a href="https://webtools-labs.com/frima-kakuteishinkoku-checker/">フリマの確定申告 要否チェッカー</a> ／
+      <a href="https://webtools-labs.com/ideco-setsuzei-keisan/">iDeCo（確定拠出年金）節税シミュレーター</a> ／
+      <a href="https://webtools-labs.com/tokutei-shinzoku-keisan/">特定親族特別控除 計算ツール</a> ／
+      <a href="https://webtools-labs.com/taishokubi-hikaku-keisan/">退職日シミュレーター（月末退職と前日退職の比較）</a> ／
+      <a href="https://webtools-labs.com/seimei-hoken-koujo-keisan/">生命保険料控除 計算ツール</a> ／
+      <a href="https://webtools-labs.com/furusato-nozei-keisan/">ふるさと納税 上限額シミュレーター</a> ／
+      <a href="https://webtools-labs.com/saitei-chingin-checker/">最低賃金チェッカー</a>
+    </p>
+    <p>当サイトは広告を掲載する場合があります。</p>
+    <p><a href="https://webtools-labs.com/about/">運営者情報</a> ／ <a href="https://webtools-labs.com/privacy/">プライバシーポリシー</a></p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  function yen(n) { return Math.round(n).toLocaleString('ja-JP') + '円'; }
+  var calcHokenForm = function calcHokenForm(v) {
+  var ceil = Math.ceil;
+  // 計算式Ⅰ（新保険料等用）
+  function f1(p) { if (p <= 0) return 0; if (p <= 20000) return p; if (p <= 40000) return ceil(p / 2 + 10000); if (p <= 80000) return ceil(p / 4 + 20000); return 40000; }
+  // 計算式Ⅱ（年齢23歳未満の扶養親族を有する場合の新保険料等用）
+  function f2(p) { if (p <= 0) return 0; if (p <= 30000) return p; if (p <= 60000) return ceil(p / 2 + 15000); if (p <= 120000) return ceil(p / 4 + 30000); return 60000; }
+  // 計算式Ⅲ（旧保険料等用）
+  function f3(p) { if (p <= 0) return 0; if (p <= 25000) return p; if (p <= 50000) return ceil(p / 2 + 12500); if (p <= 100000) return ceil(p / 4 + 25000); return 50000; }
+  // 住民税（参考）
+  function r1(p) { if (p <= 0) return 0; if (p <= 12000) return p; if (p <= 32000) return ceil(p / 2 + 6000); if (p <= 56000) return ceil(p / 4 + 14000); return 28000; }
+  function r3(p) { if (p <= 0) return 0; if (p <= 15000) return p; if (p <= 40000) return ceil(p / 2 + 7500); if (p <= 70000) return ceil(p / 4 + 17500); return 35000; }
+  function pos(x) { return Math.max(0, Math.floor(Number(x) || 0)); }
+
+  var A = pos(v.generalNew), B = pos(v.generalOld), C = pos(v.medical), D = pos(v.pensionNew), E = pos(v.pensionOld);
+  var kids = !!v.kids;
+  var c1 = f1(A), c2 = f2(A), c3 = f3(B);
+  var c4 = Math.min(c1 + c3, 40000), c5 = Math.min(c2 + c3, 60000);
+  // ㋑ ③と④（23歳未満の扶養親族がいる場合は⑤）のいずれか大きい金額。新だけ・旧だけの場合はそれぞれの金額
+  var i1;
+  if (A > 0 && B > 0) i1 = Math.max(c3, kids ? c5 : c4);
+  else if (A > 0) i1 = kids ? c2 : c1;
+  else i1 = c3;
+  var ro = f1(C);
+  var c6 = f1(D), c7 = f3(E), c8 = Math.min(c6 + c7, 40000);
+  var ha;
+  if (D > 0 && E > 0) ha = Math.max(c7, c8);
+  else if (D > 0) ha = c6;
+  else ha = c7;
+  var lifeSum = i1 + ro + ha;
+  var life = Math.min(lifeSum, 120000);
+
+  // 地震保険料控除: Ⓑ地震保険料（全額、最高5万）、Ⓒ旧長期損害保険料（1万円超は×1/2＋5,000円、最高1.5万）、合計最高5万
+  var Bq = pos(v.earthquake), Cq = pos(v.oldLongTerm);
+  var cq = Cq <= 10000 ? Cq : Math.min(ceil(Cq / 2 + 5000), 15000);
+  var quakeSum = Math.min(Bq, 50000) + cq;
+  var quake = Math.min(quakeSum, 50000);
+  // 住民税: 地震保険料×1/2（最高2.5万）、旧長期は5,000円以下全額・15,000円以下×1/2＋2,500円・超は1万、合計最高2.5万
+  var quakeRT = Math.min(Math.min(ceil(Bq / 2), 25000) + (Cq <= 5000 ? Cq : Cq <= 15000 ? ceil(Cq / 2 + 2500) : 10000), 25000);
+
+  // 住民税の生命保険料控除（参考）
+  function slotRT(nw, od, cap) { var a = r1(nw), b = r3(od); if (nw <= 0) return b; if (od <= 0) return a; return Math.max(b, Math.min(a + b, cap)); }
+  var lifeRT = Math.min(slotRT(A, B, 28000) + r1(C) + slotRT(D, E, 28000), 70000);
+
+  var social = pos(v.social), smallBiz = pos(v.smallBiz);
+  return {
+    A: A, B: B, C: C, D: D, E: E, kids: kids,
+    c1: c1, c2: c2, c3: c3, c4: c4, c5: c5, i1: i1, ro: ro, c6: c6, c7: c7, c8: c8, ha: ha,
+    lifeSum: lifeSum, life: life, lifeRT: lifeRT,
+    Aq: Bq + Cq, Bq: Bq, Cq: Cq, cq: cq, quakeSum: quakeSum, quake: quake, quakeRT: quakeRT,
+    social: social, smallBiz: smallBiz,
+    totalIT: life + quake + social + smallBiz,
+    totalRT: lifeRT + quakeRT + social + smallBiz
+  };
+};
+
+  var ids = ['generalNew', 'generalOld', 'medical', 'pensionNew', 'pensionOld', 'earthquake', 'oldLongTerm', 'social', 'smallBiz'];
+  var inputs = {};
+  ids.forEach(function (id) { inputs[id] = document.getElementById(id); });
+  var kidsInput = document.getElementById('kids');
+  var taxRateInput = document.getElementById('taxRate');
+  var summaryCards = document.getElementById('summaryCards');
+  var resultBody = document.getElementById('resultBody');
+  var shareX = document.getElementById('shareX');
+  var shareLine = document.getElementById('shareLine');
+  var shareFb = document.getElementById('shareFb');
+  var shareHatena = document.getElementById('shareHatena');
+
+  function setShareLinks(text, url) {
+    shareX.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
+    shareLine.href = 'https://line.me/R/msg/text/?' + encodeURIComponent(text + '\n' + url);
+    shareFb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url) + '&quote=' + encodeURIComponent(text);
+    shareHatena.href = 'https://b.hatena.ne.jp/entry/panel/?url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(text);
+  }
+
+  function row(sym, label, amount, show) {
+    if (!show) return '';
+    return '<tr><td><span class="sym">' + sym + '</span></td><td>' + label + '</td><td class="num">' + yen(amount) + '</td></tr>';
+  }
+  function section(label) { return '<tr class="form-section"><td colspan="3">' + label + '</td></tr>'; }
+
+  function render() {
+    var v = {};
+    ids.forEach(function (id) { v[id] = inputs[id].value; });
+    v.kids = kidsInput.checked;
+    var r = calcHokenForm(v);
+    var rate = Number(taxRateInput.value);
+    var saveIT = r.totalIT * rate * 1.021;
+    var saveRT = r.totalRT * 0.10;
+
+    summaryCards.innerHTML =
+      '<div class="summary-card"><div class="label">生命保険料控除額</div><div class="value">' + yen(r.life) + '</div><div class="sub">最高12万円' + (r.lifeSum > 120000 ? '（上限に到達）' : '') + '</div></div>' +
+      '<div class="summary-card"><div class="label">地震保険料控除額</div><div class="value">' + yen(r.quake) + '</div><div class="sub">最高5万円' + (r.quakeSum > 50000 ? '（上限に到達）' : '') + '</div></div>' +
+      '<div class="summary-card"><div class="label">税金が安くなる目安（年間）</div><div class="value">約' + yen(saveIT + saveRT) + '</div><div class="sub">所得税 約' + yen(saveIT) + '＋住民税 約' + yen(saveRT) + '</div></div>';
+
+    var hasA = r.A > 0, hasB = r.B > 0, hasD = r.D > 0, hasE = r.E > 0;
+    var html = section('生命保険料控除');
+    html += row('A', '一般の生命保険料のうち新保険料等の合計', r.A, hasA);
+    html += row('B', '一般の生命保険料のうち旧保険料等の合計', r.B, hasB);
+    if (r.kids) {
+      html += row('②', 'Aを計算式Ⅱ（23歳未満の扶養親族あり）に当てはめた金額（最高6万円）', r.c2, hasA);
+    } else {
+      html += row('①', 'Aを計算式Ⅰに当てはめた金額（最高4万円）', r.c1, hasA);
+    }
+    html += row('③', 'Bを計算式Ⅲに当てはめた金額（最高5万円）', r.c3, hasB);
+    if (hasA && hasB) html += r.kids ? row('⑤', '計（②＋③）（最高6万円）', r.c5, true) : row('④', '計（①＋③）（最高4万円）', r.c4, true);
+    html += row('㋑', hasA && hasB ? ('③と' + (r.kids ? '⑤' : '④') + 'のいずれか大きい金額') : '一般の生命保険料の控除額', r.i1, hasA || hasB);
+    html += row('C', '介護医療保険料の合計', r.C, r.C > 0);
+    html += row('㋺', 'Cを計算式Ⅰに当てはめた金額（最高4万円）', r.ro, r.C > 0);
+    html += row('D', '個人年金保険料のうち新保険料等の合計', r.D, hasD);
+    html += row('E', '個人年金保険料のうち旧保険料等の合計', r.E, hasE);
+    html += row('⑥', 'Dを計算式Ⅰに当てはめた金額（最高4万円）', r.c6, hasD);
+    html += row('⑦', 'Eを計算式Ⅲに当てはめた金額（最高5万円）', r.c7, hasE);
+    html += row('⑧', '計（⑥＋⑦）（最高4万円）', r.c8, hasD && hasE);
+    html += row('㋩', hasD && hasE ? '⑦と⑧のいずれか大きい金額' : '個人年金保険料の控除額', r.ha, hasD || hasE);
+    html += '<tr class="total"><td></td><td>生命保険料控除額 計（㋑＋㋺＋㋩、最高12万円）</td><td class="num">' + yen(r.life) + '</td></tr>';
+    if (r.Aq > 0) {
+      html += section('地震保険料控除');
+      html += row('Ⓐ', '支払った保険料等の金額の合計', r.Aq, true);
+      html += row('Ⓑ', 'Ⓐのうち地震保険料の金額の合計（最高5万円）', Math.min(r.Bq, 50000), r.Bq > 0);
+      html += row('Ⓒ', 'Ⓐのうち旧長期損害保険料の金額の合計', r.Cq, r.Cq > 0);
+      html += '<tr class="total"><td></td><td>地震保険料控除額（Ⓑ＋Ⓒの計算額' + (r.Cq > 10000 ? '：Ⓒ×1/2＋5,000円' : '') + '、最高5万円）</td><td class="num">' + yen(r.quake) + '</td></tr>';
+    }
+    if (r.social > 0) { html += section('社会保険料控除'); html += '<tr class="total"><td></td><td>あなたが本年中に支払った保険料の金額（合計）</td><td class="num">' + yen(r.social) + '</td></tr>'; }
+    if (r.smallBiz > 0) { html += section('小規模企業共済等掛金控除'); html += '<tr class="total"><td></td><td>あなたが本年中に支払った掛金の金額（合計）</td><td class="num">' + yen(r.smallBiz) + '</td></tr>'; }
+    html += section('参考: 住民税の控除額（申告書には書きません）');
+    html += '<tr><td></td><td>生命保険料控除（最高7万円）＋地震保険料控除（最高2.5万円）</td><td class="num">' + yen(r.lifeRT + r.quakeRT) + '</td></tr>';
+    resultBody.innerHTML = html;
+
+    setShareLinks('保険料控除申告書を計算したら、生命保険料控除' + yen(r.life) + '・地震保険料控除' + yen(r.quake) + 'で、年に約' + yen(saveIT + saveRT) + '安くなる計算でした\n\n保険料控除申告書 計算ツール', 'https://webtools-labs.com/hokenryo-koujo-shinkokusho/');
+  }
+
+  ids.forEach(function (id) { inputs[id].addEventListener('input', render); });
+  kidsInput.addEventListener('change', render);
+  taxRateInput.addEventListener('change', render);
+  render();
+
+  var WEB3FORMS_ACCESS_KEY = '4551c9fd-4327-4bd4-97e0-8b93d85fd077';
+  var contactForm = document.getElementById('contactForm');
+  var contactStatus = document.getElementById('contactStatus');
+  var contactSubmit = document.getElementById('contactSubmit');
+
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    contactSubmit.disabled = true;
+    contactStatus.textContent = '送信中...';
+    contactStatus.className = 'contact-status';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: '保険料控除申告書 計算ツールへのお問い合わせ',
+        email: document.getElementById('contactEmail').value || 'noreply@example.com',
+        message: document.getElementById('contactMessage').value
+      })
+    }).then(function (res) { return res.json(); }).then(function (data) {
+      contactSubmit.disabled = false;
+      if (data.success) {
+        contactStatus.textContent = '送信しました。ありがとうございます！';
+        contactStatus.className = 'contact-status ok';
+        contactForm.reset();
+      } else {
+        contactStatus.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
+        contactStatus.className = 'contact-status err';
+      }
+    }).catch(function () {
+      contactSubmit.disabled = false;
+      contactStatus.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
+      contactStatus.className = 'contact-status err';
+    });
+  });
+})();
+</script>
+</body>
+</html>
