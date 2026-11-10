@@ -416,6 +416,7 @@ footer.site-footer a { color: var(--accent); }
 
   <div class="pr-box">
     <span class="pr-label">PR</span>
+    <p class="pr-lede" id="prCapHint" hidden></p>
     <p class="pr-lede">控除証明書を並べてみて「この保険、今の自分に合っているのかな」と気になった方は、保険のプランナーに無料で相談して見直すという方法もあります。</p>
     <div class="pr-banner pr-cta-wrap">
       <a href="https://px.a8.net/svt/ejp?a8mat=4BEET1+AOM342+4GN2+NV9N6" rel="nofollow" class="pr-cta">保険の無料相談サイト「ガーデン」はココ</a>
@@ -430,6 +431,15 @@ footer.site-footer a { color: var(--accent); }
     <p><strong>3. 区分ごとに合計してA〜E、Ⓑ・Ⓒに書く。</strong>このツールの入力欄と同じ区分です。23歳未満の扶養親族がいる人は、☆欄にその人の氏名・生年月日などを書きます。</p>
     <p><strong>4. 計算式に当てはめて①〜⑧、㋑㋺㋩、控除額を書く。</strong>このツールの「申告書に書く金額」の表をそのまま写せます。最後に控除証明書を添付して勤務先に提出します。</p>
   </section>
+
+  <div class="pr-box">
+    <span class="pr-label">PR</span>
+    <p class="pr-lede">申告書の「小規模企業共済等掛金控除」の欄は、iDeCo（個人型確定拠出年金）の掛金を書く欄です。iDeCoは掛金の全額が所得から差し引かれるので、今年は空欄でも、始めれば来年からこの欄で税金を減らせます。加入できるか・掛金の上限は、勤務先の年金制度によって変わります。</p>
+    <div class="pr-banner pr-cta-wrap">
+      <a href="https://px.a8.net/svt/ejp?a8mat=4BEET1+AHGVUQ+3XCC+BXIYQ" rel="nofollow" class="pr-cta">松井証券ではじめるiDeCo</a>
+      <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4BEET1+AHGVUQ+3XCC+BXIYQ" alt="">
+    </div>
+  </div>
 
   <section>
     <h2>保険の種類別 どの欄に書く？振り分け表</h2>
@@ -752,6 +762,18 @@ footer.site-footer a { color: var(--accent); }
   }
   function section(label) { return '<tr class="form-section"><td colspan="3">' + label + '</td></tr>'; }
 
+  // 控除の上限を超えて保険料を払っている区分があれば、PR欄に一言出す（所得税の計算式で、これ以上払っても控除が増えない金額）
+  function capHint(A, B, C, D, E, kids) {
+    var over = [];
+    if (A > (kids ? 120000 : 80000) || B > 100000) over.push('一般の生命保険');
+    if (C > 80000) over.push('介護医療保険');
+    if (D > 80000 || E > 100000) over.push('個人年金保険');
+    var el = document.getElementById('prCapHint');
+    if (!el) return;
+    el.hidden = !over.length;
+    if (over.length) el.innerHTML = '入力した金額では、<strong>' + over.join('・') + '</strong>の保険料が控除の上限を超えています（上限を超えた分は、いくら払っても控除は増えません）。保険料と保障の内容が見合っているか、一度確かめてみるのもよいかもしれません。';
+  }
+
   function render() {
     var v = {};
     ids.forEach(function (id) { v[id] = inputs[id].value; });
@@ -799,6 +821,7 @@ footer.site-footer a { color: var(--accent); }
     html += section('参考: 住民税の控除額（申告書には書きません）');
     html += '<tr><td></td><td>生命保険料控除（最高7万円）＋地震保険料控除（最高2.5万円）</td><td class="num">' + yen(r.lifeRT + r.quakeRT) + '</td></tr>';
     resultBody.innerHTML = html;
+    capHint(r.A, r.B, r.C, r.D, r.E, r.kids);
 
     setShareLinks('保険料控除申告書を計算したら、生命保険料控除' + yen(r.life) + '・地震保険料控除' + yen(r.quake) + 'で、年に約' + yen(saveIT + saveRT) + '安くなる計算でした\n\n保険料控除申告書 計算ツール', 'https://webtools-labs.com/hokenryo-koujo-shinkokusho/');
   }
@@ -845,6 +868,15 @@ footer.site-footer a { color: var(--accent); }
     });
   });
 })();
+</script>
+<script>
+// A8広告のクリックをGA4に記録（どのページ・どの広告がクリックされたか）
+document.addEventListener('click', function (e) {
+  var a = e.target.closest ? e.target.closest('a[href*="px.a8.net"]') : null;
+  if (!a || typeof gtag !== 'function') return;
+  var m = a.href.match(/a8mat=([^&]+)/);
+  gtag('event', 'pr_click', { ad_id: m ? decodeURIComponent(m[1]) : '', ad_text: a.textContent.trim().slice(0, 80) });
+});
 </script>
 </body>
 </html>
