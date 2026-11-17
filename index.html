@@ -221,7 +221,7 @@ tr.total td { font-weight: 700; }
 tr.total { background: var(--best-bg); }
 
 .ref-table { overflow-x: auto; }
-.ref-table table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 460px; }
+.ref-table table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 0; }
 .ref-table th, .ref-table td { padding: 0.5rem 0.5rem; border-bottom: 1px solid var(--line); text-align: left; }
 .ref-table td.num { font-variant-numeric: tabular-nums; text-align: right; }
 .ref-table tr.highlight td { background: var(--best-bg); font-weight: 700; }
@@ -312,6 +312,15 @@ footer.site-footer a { color: var(--accent); }
 .related-tools a { color: var(--accent); font-weight: 700; text-decoration: none; }
 .related-tools a:hover { text-decoration: underline; }
 .related-tools li p { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.85rem; }
+/* スマホで表が画面からはみ出さないように（2026-11-17） */
+@media (max-width: 600px) {
+  .ref-table table { font-size: 0.8rem; }
+  .ref-table th, .ref-table td { padding: 0.45rem 0.3rem; }
+  .ref-table th, .ref-table td:first-child { white-space: normal; }
+  .ref-table td.nw { white-space: nowrap; }
+  .ref-table th:first-child, .ref-table td:first-child { min-width: 5em; position: sticky; left: 0; z-index: 1; background: var(--bg); box-shadow: 1px 0 0 var(--line); }
+  .ref-table tr.best td:first-child, .ref-table tr.total td:first-child, .ref-table tr.next td:first-child, .ref-table tr.highlight td:first-child { background: var(--best-bg, var(--bg)); }
+}
 </style>
 </head>
 <body>
@@ -484,12 +493,12 @@ footer.site-footer a { color: var(--accent); }
       <table style="white-space:nowrap">
         <thead><tr><th>年間の保険料</th><th class="num">所得税の控除額</th><th class="num">住民税の控除額</th><th class="num">税率5%</th><th class="num">税率10%</th><th class="num">税率20%</th></tr></thead>
         <tbody>
-          <tr><td>1万円</td><td class="num">10,000円</td><td class="num">10,000円</td><td class="num">1,511円</td><td class="num">2,021円</td><td class="num">3,042円</td></tr>
-          <tr><td>2万円</td><td class="num">20,000円</td><td class="num">16,000円</td><td class="num">2,621円</td><td class="num">3,642円</td><td class="num">5,684円</td></tr>
-          <tr><td>4万円</td><td class="num">30,000円</td><td class="num">24,000円</td><td class="num">3,932円</td><td class="num">5,463円</td><td class="num">8,526円</td></tr>
-          <tr><td>6万円</td><td class="num">35,000円</td><td class="num">28,000円</td><td class="num">4,587円</td><td class="num">6,374円</td><td class="num">9,947円</td></tr>
-          <tr><td>8万円以上</td><td class="num">40,000円</td><td class="num">28,000円</td><td class="num">4,842円</td><td class="num">6,884円</td><td class="num">10,968円</td></tr>
-          <tr class="total"><td>3区分とも上限（一般・介護医療・個人年金）</td><td class="num">120,000円</td><td class="num">70,000円</td><td class="num">13,126円</td><td class="num">19,252円</td><td class="num">31,504円</td></tr>
+          <tr><td>1万円</td><td class="num nw">10,000円</td><td class="num nw">10,000円</td><td class="num nw">1,511円</td><td class="num nw">2,021円</td><td class="num nw">3,042円</td></tr>
+          <tr><td>2万円</td><td class="num nw">20,000円</td><td class="num nw">16,000円</td><td class="num nw">2,621円</td><td class="num nw">3,642円</td><td class="num nw">5,684円</td></tr>
+          <tr><td>4万円</td><td class="num nw">30,000円</td><td class="num nw">24,000円</td><td class="num nw">3,932円</td><td class="num nw">5,463円</td><td class="num nw">8,526円</td></tr>
+          <tr><td>6万円</td><td class="num nw">35,000円</td><td class="num nw">28,000円</td><td class="num nw">4,587円</td><td class="num nw">6,374円</td><td class="num nw">9,947円</td></tr>
+          <tr><td>8万円以上</td><td class="num nw">40,000円</td><td class="num nw">28,000円</td><td class="num nw">4,842円</td><td class="num nw">6,884円</td><td class="num nw">10,968円</td></tr>
+          <tr class="total"><td>3区分とも上限（一般・介護医療・個人年金）</td><td class="num nw">120,000円</td><td class="num nw">70,000円</td><td class="num nw">13,126円</td><td class="num nw">19,252円</td><td class="num nw">31,504円</td></tr>
         </tbody>
       </table>
     </div>
@@ -502,14 +511,14 @@ footer.site-footer a { color: var(--accent); }
     <div class="ref-table">
       <table>
         <tbody>
-          <tr><td>②（Aを計算式Ⅱ）</td><td class="num">50,000円</td></tr>
-          <tr><td>③（Bを計算式Ⅲ）</td><td class="num">30,000円</td></tr>
-          <tr><td>⑤（②＋③、最高6万円）</td><td class="num">60,000円</td></tr>
-          <tr><td>㋑ 一般の生命保険料の控除額</td><td class="num">60,000円</td></tr>
-          <tr><td>㋺ 介護医療保険料の控除額</td><td class="num">40,000円</td></tr>
-          <tr><td>㋩ 個人年金保険料の控除額（⑦と⑧の大きいほう）</td><td class="num">47,500円</td></tr>
-          <tr class="total"><td>生命保険料控除額（147,500円→最高12万円）</td><td class="num">120,000円</td></tr>
-          <tr class="total"><td>地震保険料控除額（54,400円→最高5万円）</td><td class="num">50,000円</td></tr>
+          <tr><td>②（Aを計算式Ⅱ）</td><td class="num nw">50,000円</td></tr>
+          <tr><td>③（Bを計算式Ⅲ）</td><td class="num nw">30,000円</td></tr>
+          <tr><td>⑤（②＋③、最高6万円）</td><td class="num nw">60,000円</td></tr>
+          <tr><td>㋑ 一般の生命保険料の控除額</td><td class="num nw">60,000円</td></tr>
+          <tr><td>㋺ 介護医療保険料の控除額</td><td class="num nw">40,000円</td></tr>
+          <tr><td>㋩ 個人年金保険料の控除額（⑦と⑧の大きいほう）</td><td class="num nw">47,500円</td></tr>
+          <tr class="total"><td>生命保険料控除額（147,500円→最高12万円）</td><td class="num nw">120,000円</td></tr>
+          <tr class="total"><td>地震保険料控除額（54,400円→最高5万円）</td><td class="num nw">50,000円</td></tr>
         </tbody>
       </table>
     </div>
